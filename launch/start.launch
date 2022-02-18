@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="listener" pkg="beginner_tutorials" type="listener.py" output="screen" />
+	<node name="talker" pkg="beginner_tutorials" type="talker.py" output="screen" />
+</launch>
