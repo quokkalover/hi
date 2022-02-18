@@ -38,9 +38,20 @@
 
 import rospy
 from std_msgs.msg import String
+import os
+
+a = 1
 
 def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
+    global a
+    if (a == 1):
+        rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
+        os.system('rosrun turtlesim turtlesim_node')
+        a = 0
+    if (data.data[0] == 'H'):
+        
+        rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
+
 
 def listener():
 
